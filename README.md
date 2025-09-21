@@ -20,26 +20,7 @@
 
 ## 🚀 快速开始
 
-### 1. 使用Docker Compose（推荐）
-
-```bash
-# 克隆仓库
-git clone <repository-url>
-cd vector-search-service
-
-# 启动服务
-docker-compose up -d
-
-# 查看服务状态
-docker-compose ps
-```
-
-服务启动后，可以通过以下URL访问：
-- API文档：http://localhost:8000/docs
-- 健康检查：http://localhost:8000/health
-- 监控（可选）：http://localhost:3000 (Grafana)
-
-### 2. 本地开发环境
+### 本地开发环境
 
 ```bash
 # 克隆仓库
@@ -172,34 +153,6 @@ curl -X POST http://localhost:8000/search \
 - **RATE_LIMIT**: API速率限制
 
 详细配置请参考`.env.example`文件。
-
-## 🐳 Docker部署
-
-### 开发环境
-
-使用`docker-compose.yml`文件可以快速启动开发环境，包含所有必要的服务：
-
-```bash
-docker-compose up -d
-```
-
-### 生产环境
-
-对于生产环境，可以使用单独的Docker镜像：
-
-```bash
-# 构建镜像
-docker build -t vector-search-service .
-
-# 运行容器
-docker run -d --name vector-search \
-  -p 8000:8000 \
-  -e MILVUS_HOST=milvus-server \
-  -e MILVUS_PORT=19530 \
-  -e DEBUG=false \
-  -e WORKERS=4 \
-  vector-search-service
-```
 
 ## 📊 监控与维护
 
