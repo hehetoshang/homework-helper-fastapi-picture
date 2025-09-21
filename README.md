@@ -62,7 +62,7 @@ cp .env.example .env
 # 编辑.env文件，配置Milvus连接信息
 
 # 启动Milvus（如果本地没有）
-docker run -d --name milvus-standalone -p 19530:19530 -p 9091:9091 milvusdb/milvus:v2.2.8
+docker run -d --name milvus-standalone -p 19530:19530 -p 9091:9091 milvusdb/milvus:v2.2.8 milvus run standalone
 
 # 启动服务
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
