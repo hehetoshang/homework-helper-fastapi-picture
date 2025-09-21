@@ -17,6 +17,9 @@ from .utils import (
     global_stats, RateLimiter, generate_error_response
 )
 
+# 导入Prometheus指标集成模块
+from prometheus_fastapi_instrumentator import Instrumentator
+
 # 配置日志
 logger = setup_logging("INFO" if not settings.DEBUG else "DEBUG")
 
@@ -29,6 +32,12 @@ app = FastAPI(
     redoc_url="/redoc",
     debug=settings.DEBUG
 )
+
+# 配置Prometheus指标收集器
+instrumentator = Instrumentator()
+
+# 启用基本指标收集
+instrumentator.instrument(app).expose(app, endpoint="/metrics", include_in_schema=True)
 
 # 添加CORS中间件
 app.add_middleware(
