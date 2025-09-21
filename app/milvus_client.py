@@ -1,5 +1,5 @@
 from pymilvus import (connections, Collection, CollectionSchema, FieldSchema,
-                      DataType, utility, Index, AnnSearchRequest)
+                      DataType, utility, Index)
 from typing import List, Dict, Any, Optional, Tuple
 from pymilvus.exceptions import (MilvusException, ConnectionNotExistException,
                                 CollectionNotExistException)

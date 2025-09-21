@@ -1,28 +1,11 @@
-# 项目依赖文件
-
-# Web框架和服务器
-fastapi==0.88.0
-uvicorn==0.20.0
-
-# 数据验证
-pydantic==1.10.4
-
-# Milvus客户端
+fastapi==0.104.1
+uvicorn==0.24.0.post1
+pydantic==2.5.2
+python-multipart==0.0.6
+numpy==1.26.2
+opencv-python==4.8.1.78
 pymilvus==2.2.8
-
-# 向量处理
- towhee==1.0.0rc1
-
-# 工具库
+pillow==10.1.0
+towhee==1.0.0rc1
 retry==0.9.2
-python-multipart==0.0.5
-numpy==1.24.1
-Pillow==9.4.0
-
-# 监控（可选）
-prometheus-client==0.16.0
-prometheus-fastapi-instrumentator==6.0.0
-
-# 测试
-pytest==7.2.1
-httpx==0.23.3
+python-dotenv==1.0.0
