@@ -82,7 +82,7 @@ DEBUG=true             # 开发环境开启调试模式
 
 ```bash
 # 启动Milvus独立实例
-docker run -d --name milvus-standalone -p 19530:19530 -p 9091:9091 milvusdb/milvus:v2.2.8
+docker run -d --name milvus-standalone -p 19530:19530 -p 9091:9091 milvusdb/milvus:v2.2.8 milvus run standalone
 ```
 
 验证Milvus是否成功启动：
