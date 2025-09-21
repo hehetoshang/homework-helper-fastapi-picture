@@ -83,7 +83,7 @@ if command -v docker &> /dev/null; then
         fi
     else
         echo "拉取并启动Milvus容器..."
-        docker run -d --name milvus-standalone -p 19530:19530 -p 9091:9091 milvusdb/milvus:v2.2.8
+        docker run -d --name milvus-standalone -p 19530:19530 -p 9091:9091 milvusdb/milvus:v2.2.8 milvus run standalone
         if [ $? -ne 0 ]; then
             echo "错误: 启动Milvus容器失败"
         else
