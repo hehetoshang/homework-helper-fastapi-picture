@@ -1,4 +1,6 @@
 @echo off
+chcp 65001
+cls
 
 REM 本地开发环境启动脚本（Windows版本）
 
