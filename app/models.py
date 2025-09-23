@@ -53,7 +53,7 @@ class SearchRequest(BaseModel):
     """搜索相似题目的请求模型"""
     image_base64: str = Field(..., description="搜索图片的Base64编码")
     top_k: int = Field(5, ge=1, le=100, description="返回的最大结果数量")
-    search_method: str = Field("vector", regex="^(vector|hybrid)$", description="搜索方法: vector(纯向量) 或 hybrid(混合)")
+    search_method: str = Field("vector", pattern="^(vector|hybrid)$", description="搜索方法: vector(纯向量) 或 hybrid(混合)")
     filters: Optional[Dict[str, Any]] = Field(None, description="搜索过滤条件")
     
     @validator("image_base64")
