@@ -31,7 +31,7 @@ cd vector-search-service
 python -m venv venv
 # 激活虚拟环境
 # Windows
-env\Scripts\activate
+venv\Scripts\activate
 # Linux/Mac
 source venv/bin/activate
 
