@@ -76,13 +76,6 @@ if not exist ".env" (
     echo Please configure the .env file according to your environment
 )
 
-REM 启动FastAPI服务
-echo Starting FastAPI service...
-echo Service will start at http://localhost:8000
-echo API documentation: http://localhost:8000/docs
-echo Metrics endpoint: http://localhost:8000/metrics
-echo Press Ctrl+C to stop the service
-
 echo.
 
 REM 启动服务
