@@ -31,12 +31,12 @@ class VectorizationPipeline:
     def _create_vectorization_pipeline(self):
         """创建Towhee向量生成管道"""
         try:
-            # 使用Towhee的CLIP模型创建图片向量化管道
+            # 使用Towhee的新API创建图片向量化管道
             self.pipeline = (
-                towhee.dc["image"]()
-                .image_decode["image", "decoded_image"]()
-                .image_embedding.clip["decoded_image", "vector"]()
-                .select["vector"]()
+                towhee.pipe.input("image")
+                .map("image", "decoded_image", towhee.image_decode())
+                .map("decoded_image", "vector", towhee.image_embedding.clip())
+                .output("vector")
             )
             logger.info("成功创建Towhee向量生成管道")
         except Exception as e:
