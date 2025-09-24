@@ -34,8 +34,8 @@ class VectorizationPipeline:
             # 使用Towhee的新API创建图片向量化管道
             self.pipeline = (
                 towhee.pipe.input("image")
-                .map("image", "decoded_image", towhee.image_decode())
-                .map("decoded_image", "vector", towhee.image_embedding.clip())
+                .map("image", "decoded_image", towhee.ops.image_decode())
+                .map("decoded_image", "vector", towhee.ops.image_embedding.clip())
                 .output("vector")
             )
             logger.info("成功创建Towhee向量生成管道")
